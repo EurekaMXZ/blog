@@ -1,0 +1,19 @@
+# Hugo generated files
+.hugo_build.lock
+public/
+resources/
+hugo_stats.json
+
+# Theme local dependencies
+themes/DoIt/node_modules/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
