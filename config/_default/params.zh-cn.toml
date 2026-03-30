@@ -1,21 +1,21 @@
 # site description
 # 网站描述
-description = "Hugo DoIt 主题官方文档"
+description = "一个关于编程、架构与长期主义的个人技术博客。"
 # site keywords
 # 网站关键词
-keywords = ["Theme", "Hugo"]
+keywords = ["技术博客", "后端开发", "linux"]
 # App icon config
 # 应用图标配置
 [app]
   # optional site title override for the app when added to an iOS home screen or Android launcher
   # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-  title = "DoIt"
+  title = "EurekaMXZ Blog"
   # whether to omit favicon resource links
   # 是否隐藏网站图标资源链接
   noFavicon = false
   # modern SVG favicon to use in place of older style .png and .ico files
   # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
-  svgFavicon = ""
+  svgFavicon = "https://blog-static.eurekamxz.me/images/avatar.jpg"
   # Safari mask icon color
   # Safari 图标颜色
   iconColor = "#5bbad5"
@@ -28,7 +28,7 @@ keywords = ["Theme", "Hugo"]
   enable = true
   # type of search engine ("algolia", "fuse", "pagefind")
   # 搜索引擎的类型 ("algolia", "fuse", "pagefind")
-  type = "algolia"
+  type = "fuse"
   # max index length of the chunked content
   # 文章内容最长索引长度
   contentLength = 4000
@@ -84,19 +84,19 @@ keywords = ["Theme", "Hugo"]
     gravatarEmail = ""
     # URL of avatar shown in home page
     # 主页显示头像的 URL
-    avatarURL = "/images/avatar.webp"
+    avatarURL = "https://blog-static.eurekamxz.me/images/avatar.jpg"
     # URL the avatar links to
     # 头像的链接指向的 URL
-    avatarLinkURL = ""
+    avatarLinkURL = "https://eurekamxz.me/"
     # title shown in home page (HTML format is supported)
     # 主页显示的网站标题 (支持 HTML 格式)
-    title = ""
+    title = "EurekaMXZ Blog"
     # subtitle shown in home page
     # 主页显示的网站副标题
-    subtitle = "一个简洁、优雅且高效的 Hugo 主题"
+    subtitle = "Technology and long-term thinking."
     # whether to use typeit animation for subtitle
     # 是否为副标题显示打字机动画
-    typeit = false
+    typeit = true
     # whether to show social links
     # 是否显示社交账号
     social = true
@@ -116,22 +116,22 @@ keywords = ["Theme", "Hugo"]
   Angellist = ""
   Bandcamp = ""
   Behance = ""
-  Bilibili = "xxxx"
+  Bilibili = ""
   Bitbucket = ""
   BuyMeACoffee = ""
   Codepen = ""
   Deviantart = ""
-  Devto = "xxxx"
-  Douban = "xxxx"
+  Devto = ""
+  Douban = ""
   Dribbble = ""
-  Email = "xxxx@xxxx.com"
+  Email = "eurekamxz@gmail.com"
   Facebook = ""
   Fivehundredpx = ""
   Flickr = ""
   Foursquare = ""
   FreeCodeCamp = ""
   Gitea = ""
-  GitHub = "xxxx"
+  GitHub = "EurekaMXZ"
   Gitlab = ""
   Goodreads = ""
   Googlescholar = ""
@@ -166,32 +166,30 @@ keywords = ["Theme", "Hugo"]
   Soundcloud = ""
   Spotify = ""
   Stackoverflow = ""
-  Steam = "xxxx"
+  Steam = ""
   Strava = ""
-  Telegram = ""
+  Telegram = "EurekaMXZ"
   Thingiverse = ""
   Tumblr = ""
   Twitch = ""
-  Twitter = ""
+  Twitter = "EurekaMXZ"
   Vine = ""
   VK = ""
-  Weibo = "xxxx"
+  Weibo = ""
   Whatsapp = ""
   Wordpress = ""
   Xing = ""
   XMPP = ""
-  Youtubechannel = ""
+  Youtubechannel = "@EurekaMXZ"
   Youtubecustom = ""
   Youtubelegacy = ""
-  Zhihu = "xxxx"
+  Zhihu = ""
   Bluesky = ""
-  [social.Diaspora]
-    id = "@xxxx"
-    prefix = "https://yyyy/"
+
 # Sponsor config
 # 赞助设置
 [sponsor]
   enable = false
   bio = "如果你觉得这篇文章对你有所帮助，欢迎赞赏~"
-  link = "https://github.com/sponsors/HEIGE-PCloud"
+  link = "https://github.com/sponsors/EurekaMXZ"
   # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"

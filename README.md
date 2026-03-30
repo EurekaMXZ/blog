@@ -1,5 +1,14 @@
 # blog
 
+Personal technology blog.
+
+## Deploy
+
+```shell
+git clone https://github.com/EurekaMXZ/blog.git --recursive
+hugo serve -D
+```
+
 ## License
 
 This repository uses different licenses for different types of material.
