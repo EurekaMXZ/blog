@@ -319,6 +319,11 @@ Bob -> Alice : hello
 
 ## WaveDrom
 
+{{< admonition warning "Wavedrom 错误" >}}
+Wavedrom 在当前的生产环境无法加载
+参考：[https://github.com/HEIGE-PCloud/DoIt/issues/1592](https://github.com/HEIGE-PCloud/DoIt/issues/1592)
+{{< /admonition >}}
+
 ```wavedrom
 {signal: [
   {name: 'clock',   wave: 'p................'},
