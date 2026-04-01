@@ -1,13 +1,17 @@
 # blog
 
-Personal technology blog.
+Personal blog.
 
-## Deploy
+## Development
 
 ```shell
 git clone https://github.com/EurekaMXZ/blog.git --recursive
 hugo serve -D
 ```
+
+## Deploy
+
+Currently, [Vercel](https://vercel.com/) deployment is configured, fork and import to vercel, you'll be able to deploy your own site.
 
 ## License
 
