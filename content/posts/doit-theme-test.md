@@ -58,12 +58,6 @@ toc:
 | 长代码块 | 测试折叠、行号与高亮 | 是 |
 | 图片 | 测试 Markdown 图片与灯箱 | 是 |
 
-{{< admonition warning "测试项" >}}
-DoIt 主题的 goldmark definition list 渲染目前存在 bug
-
-参考：[https://github.com/HEIGE-PCloud/DoIt/issues/1590](https://github.com/HEIGE-PCloud/DoIt/issues/1590)
-{{< /admonition >}}
-
 OAuth 2.0
 : 一种授权框架，用于在不暴露用户密码的前提下授予第三方应用受限访问能力。
 
@@ -318,11 +312,6 @@ Bob -> Alice : hello
 ```
 
 ## WaveDrom
-
-{{< admonition warning "Wavedrom 错误" >}}
-Wavedrom 在当前的生产环境无法加载
-参考：[https://github.com/HEIGE-PCloud/DoIt/issues/1592](https://github.com/HEIGE-PCloud/DoIt/issues/1592)
-{{< /admonition >}}
 
 ```wavedrom
 {signal: [
