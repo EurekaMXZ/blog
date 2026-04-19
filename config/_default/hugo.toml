@@ -20,14 +20,8 @@ enableEmoji = true
 # 忽略一些构建错误
 # ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-# theme
-# 主题
-theme = "DoIt"
-# themes directory
-# 主题目录
-themesDir = "themes/"
-
-# Or, when using theme as hugo module
-# [module]
-# [[module.imports]]
-# path = "github.com/HEIGE-PCloud/DoIt"
+# theme module
+# 主题模块
+[module]
+  [[module.imports]]
+    path = "github.com/HEIGE-PCloud/DoIt"

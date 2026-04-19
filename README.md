@@ -5,7 +5,8 @@ Personal blog.
 ## Development
 
 ```shell
-git clone https://github.com/EurekaMXZ/blog.git --recursive
+git clone https://github.com/EurekaMXZ/blog.git
+hugo mod tidy
 hugo serve -D
 ```
 
@@ -25,4 +26,4 @@ This repository uses different licenses for different types of material.
   [Creative Commons Attribution-ShareAlike 4.0 International
   License (CC-BY-SA-4.0)](LICENSE-DOC), unless otherwise noted.
 - Third-party components keep their upstream licenses. In particular,
-  `themes/DoIt/**` remains under its own upstream license.
+  the DoIt theme remains under its own upstream license.
