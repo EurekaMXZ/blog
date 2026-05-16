@@ -48,16 +48,6 @@ hugo mod tidy
 hugo serve -D
 ```
 
-## Production Build
-
-To reproduce the production-style build locally:
-
-```shell
-bash ./build.sh
-```
-
-The build output is written to `public/`.
-
 ## Repository Structure
 
 - `content/`: blog posts and pages
