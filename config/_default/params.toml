@@ -81,7 +81,7 @@ bundle = false
   # Hosted on (HTML format is supported)
   # 托管服务信息 (支持 HTML 格式)
   # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
-  hostedOn = '<a title="Vercel" href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a>'
+  hostedOn = '<a title="Cloudflare Pages" href="https://pages.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a>'
   # whether to show copyright info
   # 是否显示版权信息
   copyright = true
