@@ -1,0 +1,57 @@
+name: Check Hugo Updates
+
+on:
+  schedule:
+    # 与 Dependabot 同步：每周二北京时间 03:00
+    - cron: '0 19 * * 1'  # UTC 周一 19:00 = 北京时间周二 03:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-hugo-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get latest Hugo version
+        id: latest
+        run: |
+          LATEST=$(curl -sL https://api.github.com/repos/gohugoio/hugo/releases/latest \
+            | jq -r '.tag_name | sub("^v"; "")')
+          echo "version=$LATEST" >> "$GITHUB_OUTPUT"
+          echo "Latest Hugo: $LATEST"
+
+      - name: Read current .hugo-version
+        id: current
+        run: |
+          CURRENT=$(cat .hugo-version)
+          echo "version=$CURRENT" >> "$GITHUB_OUTPUT"
+          echo "Current Hugo: $CURRENT"
+
+      - name: Update .hugo-version and create PR
+        if: steps.latest.outputs.version != steps.current.outputs.version
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "deps: bump Hugo from ${{ steps.current.outputs.version }} to ${{ steps.latest.outputs.version }}"
+          branch: "deps/hugo-${{ steps.latest.outputs.version }}"
+          commit-message: |
+            deps: bump Hugo from ${{ steps.current.outputs.version }} to ${{ steps.latest.outputs.version }}
+
+            https://github.com/gohugoio/hugo/releases/tag/v${{ steps.latest.outputs.version }}
+          body: |
+            ## 🔄 Hugo 版本更新
+
+            | | 版本 |
+            |---|---|
+            | 当前 | `${{ steps.current.outputs.version }}` |
+            | 最新 | `${{ steps.latest.outputs.version }}` |
+
+            📋 [Release notes](https://github.com/gohugoio/hugo/releases/tag/v${{ steps.latest.outputs.version }})
+
+            > 合并此 PR 后，Cloudflare Pages 将在下次构建时自动使用新版 Hugo。
+          labels: dependencies
+          delete-branch: true

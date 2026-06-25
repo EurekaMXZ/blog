@@ -2,42 +2,53 @@
 
 [![Deploy-Cloudflare](https://img.shields.io/badge/Deploy-Cloudflare-F38020?logo=cloudflare)](https://pages.cloudflare.com/)
 
-A production-ready personal blog repository built with [Hugo](https://gohugo.io/) and the [DoIt](https://github.com/HEIGE-PCloud/DoIt) theme.
-
-The repository is already wired for direct deployment and routine validation:
+A personal blog built with [Hugo](https://gohugo.io/) and the [DoIt](https://github.com/HEIGE-PCloud/DoIt) theme.
 
 - Hugo is configured via `config/_default/hugo.toml`
 - The DoIt theme is imported as a Hugo Module
+- Hugo version is pinned via `.hugo-version` for reproducible Cloudflare Pages builds
 
 ## Overview
 
-This repository is not just raw blog content. It is a fully configured blog workspace that includes:
+This repository is a fully configured blog workspace that includes:
 
 - site configuration, content structure, and theme integration
-- Hugo Module-based dependency management for `hugo-theme-DoIt`
-- a reproducible build entrypoint for hosted deployment
-- CI validation to catch build regressions before merge or release
+- Hugo Module-based dependency management for the DoIt theme
+- Dependabot automation to keep the theme and GitHub Actions up to date
+- a scheduled workflow that checks for new Hugo releases and opens update PRs
 
 ## Stack
 
 - [Hugo](https://gohugo.io/) for static site generation
 - [DoIt](https://github.com/HEIGE-PCloud/DoIt) for the site theme and presentation layer
-- [Cloudflare](https://pages.cloudflare.com/) for deployment and hosting
-- [GitHub Actions](https://github.com/features/actions) for build validation
+- [Cloudflare Pages](https://pages.cloudflare.com/) for deployment and hosting
+- [Dependabot](https://docs.github.com/en/code-security/dependabot) for automated dependency updates
 
-## Included Automation
+## Automation
+
+### Dependency Updates
+
+| Dependency | How It's Tracked | Frequency |
+|---|---|---|
+| DoIt theme | Dependabot (`gomod`) | Weekly (Tuesday 03:00 CST) |
+| GitHub Actions | Dependabot (`github-actions`) | Weekly (Tuesday 03:00 CST) |
+| Hugo version | `.github/workflows/hugo-version-check.yml` | Weekly (Tuesday 03:00 CST) |
+
+When a Hugo update is detected, the workflow updates `.hugo-version` and opens a PR. Merging the PR causes Cloudflare Pages to use the new Hugo version on the next build.
+
+Dependabot is configured in `.github/dependabot.yml`. Manual update checks can be triggered via `workflow_dispatch` in the Actions tab.
 
 ### Deployment
 
-This repository can be imported into Cloudflare pages and deployed directly without needing to reconstruct the build logic from scratch.
+This repository can be imported directly into Cloudflare Pages. The platform reads `.hugo-version` to select the correct Hugo release, installs Hugo Modules via `go mod`, and builds the site with `hugo`.
 
 ## Local Development
 
 ### Requirements
 
 - Git
-- Hugo
-- Go 1.18 or later for Hugo Modules
+- Hugo (use the version in `.hugo-version`)
+- Go 1.26+
 
 ### Start the development server
 
@@ -51,10 +62,11 @@ hugo serve -D
 ## Repository Structure
 
 - `content/`: blog posts and pages
-- `config/`: Hugo configuration
-- `assets/`: custom assets and overrides
+- `config/_default/`: Hugo configuration (site, menus, params, etc.)
+- `assets/`: custom CSS and asset overrides
 - `archetypes/`: content templates
-- `.github/workflows/`: CI workflows
+- `.github/workflows/`: Hugo version check workflow
+- `.github/dependabot.yml`: Dependabot configuration
 
 ## License
 

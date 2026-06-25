@@ -3,6 +3,7 @@
 public/
 resources/
 hugo_stats.json
+assets/jsconfig.json
 
 # Editor and OS files
 .DS_Store
